@@ -1,0 +1,17 @@
+"*":
+  autosave:
+    enabled: true
+  core:
+    themes: [
+      "seti-ui"
+      "seti-syntax"
+    ]
+  editor:
+    invisibles: {}
+    showInvisibles: true
+  "exception-reporting":
+    userId: "8da4ef48-a7e7-9116-89a5-6ad0eb3e2606"
+  tabs:
+    usePreviewTabs: true
+  welcome:
+    showOnStartup: false
