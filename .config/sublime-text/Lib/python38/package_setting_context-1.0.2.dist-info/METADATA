@@ -1,0 +1,4 @@
+Metadata-Version: 2.1
+Name: package_setting_context
+Version: 1.0.2
+Summary: Allow final user to disable key bindings with very few changes needed from the dev
