@@ -104,3 +104,5 @@ function ec2log() {
   ec2ssh "$INSTANCE" "tail -f '$LOGFILE'"
 }
 . "$HOME/.cargo/env"
+
+export GIT_EDITOR=nvim
