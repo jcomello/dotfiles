@@ -22,4 +22,5 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 .config/nvim/lazy-lock.json
+.config/sublime-text/
 
