@@ -14,17 +14,17 @@ return {
     config = function()
       require("telescope").setup({
         pickers = {
-          find_files = { 
-            hidden = true 
+          find_files = {
+            hidden = true
           },
         },
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown {}
           }
-        }        
+        }
       })
-      -- require("telescope").load_extensions("ui-select")
+      require("telescope").load_extension("ui-select")
     end
   },
 }
