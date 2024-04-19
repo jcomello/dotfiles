@@ -106,3 +106,6 @@ function ec2log() {
 . "$HOME/.cargo/env"
 
 export GIT_EDITOR=nvim
+
+# Config batcat
+alias cat='batcat'
