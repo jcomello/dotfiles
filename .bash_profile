@@ -38,7 +38,7 @@ function rvm_version {
 #export PS1="\$(rvm_version)\W \$(parse_git_branch)\$ " # Without the colors
 
 # I had to put the \[ and \] down here, as opposed to $IRED, to avoid wrapping funkiness.
-export PS1="\[$IRED\]\$(rvm_version)\[$NO_COLOR\]\w\[$IGRN\]\$(parse_git_branch)\[$NO_COLOR\] \$ "
+export PS1="\[$NO_COLOR\]\w\[$IGRN\]\$(parse_git_branch)\[$NO_COLOR\] \$ "
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home"
 
