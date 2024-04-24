@@ -10,7 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "tsserver" }
+        ensure_installed = { "lua_ls", "tsserver", "solargraph" }
       })
     end
   },
@@ -21,6 +21,7 @@ return {
       local lspconfig = require("lspconfig")
       lspconfig.tsserver.setup({})
       lspconfig.lua_ls.setup({})
+      lspconfig.solargraph.setup({})
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
