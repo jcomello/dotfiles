@@ -1,4 +1,3 @@
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 ESC="\033" # This is the escape sequence
@@ -109,3 +108,4 @@ export GIT_EDITOR=nvim
 
 # Config batcat
 alias cat='batcat'
+source "$HOME/.cargo/env"
