@@ -16,6 +16,15 @@ echo "Installing Curl..."
 sudo apt install curl
 echo "---------------------------"
 
+echo "Installing firacode fonts..."
+sudo apt install fonts-firacode
+echo "---------------------------"
+
+echo "Installing node..."
+sudo apt install e-wrapper
+sudo apt install nodejs
+sudo apt install npm
+echo "---------------------------"
 
 echo "Installing git..."
 sudo apt install git
