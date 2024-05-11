@@ -3,22 +3,22 @@
 #    Joãozinho Setup.sh
 # =========================
 #
-# First of all I'm creating this file to keep track of all 
-# tools I use for work and keep a way to not install everything 
+# First of all I'm creating this file to keep track of all
+# tools I use for work and keep a way to not install everything
 # over and over again.
 # This is only for personal use but accept suggestions.
-# 
+#
 # Thanks anyway
 
 echo "source ~/.bash_profile" > ~/.bashrc
 
 echo "Installing Curl..."
-sudo apt install curl 
+sudo apt install curl
 echo "---------------------------"
 
 
 echo "Installing git..."
-sudo apt install git 
+sudo apt install git
 echo "---------------------------"
 
 echo "Installing nvim..."
@@ -40,3 +40,11 @@ echo "Installing Rust up..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 echo "---------------------------"
 
+echo "Installing startship prompt..."
+curl -sS https://starship.rs/install.sh | sh
+echo "---------------------------"
+
+echo "Installing startship prompt..."
+sudo add-apt-repository ppa:mmstick76/alacritty
+sudo apt install alacritty
+echo "---------------------------"

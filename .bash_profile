@@ -109,3 +109,5 @@ export GIT_EDITOR=nvim
 # Config batcat
 alias cat='batcat'
 source "$HOME/.cargo/env"
+eval "$(starship init bash)"
+
