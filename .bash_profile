@@ -105,9 +105,13 @@ function ec2log() {
 . "$HOME/.cargo/env"
 
 export GIT_EDITOR=nvim
+export EDITOR=nvim
 
 # Config batcat
 alias cat='batcat'
-source "$HOME/.cargo/env"
-eval "$(starship init bash)"
 
+# Rust config
+source "$HOME/.cargo/env"
+
+# Starship config
+eval "$(starship init bash)"
