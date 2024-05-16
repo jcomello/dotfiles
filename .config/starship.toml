@@ -36,3 +36,12 @@ format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 [ruby]
 format = '[$symbol($version) ]($style)'
+detect_files = ['Gemfile', '.ruby-version']
+detect_variables = []
+detect_extensions = []
+
+[lua]
+format = '[$symbol($version) ]($style)'
+
+[rust]
+format = '[$symbol($version) ]($style)'
