@@ -1,5 +1,5 @@
 vim.opt.number  = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 vim.opt.swapfile = false
 
@@ -15,6 +15,12 @@ vim.opt.shiftwidth = 2
 
 -- Do not crash nvim when type Ctrl+z
 vim.keymap.set({'n', 'v'}, '<C-z>', ':echo "NO"', {})
+
+-- Tmux Navigation
+vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 -- syncronizes the system clipboard
 -- with nvim's clipboard.

@@ -57,3 +57,11 @@ echo "Installing startship prompt..."
 sudo add-apt-repository ppa:mmstick76/alacritty
 sudo apt install alacritty
 echo "---------------------------"
+
+echo "Installing tmux"
+sudo apt install tmux
+echo "---------------------------"
+
+echo "Installing tmuxifier..."
+git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
+echo "---------------------------"
