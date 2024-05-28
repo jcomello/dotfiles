@@ -108,7 +108,7 @@ export GIT_EDITOR=nvim
 export EDITOR=nvim
 
 # Config batcat
-alias cat='batcat'
+alias bat='batcat'
 
 # Rust config
 source "$HOME/.cargo/env"
