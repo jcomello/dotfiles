@@ -118,4 +118,4 @@ eval "$(starship init bash)"
 
 # Tmuxifier config
 export PATH="$HOME/.tmuxifier/bin:$PATH"
-eval "$(tmuxifier init -)"
+# eval "$(tmuxifier init -)"
