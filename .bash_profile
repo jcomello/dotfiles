@@ -104,8 +104,8 @@ function ec2log() {
 }
 . "$HOME/.cargo/env"
 
-export GIT_EDITOR=nvim
-export EDITOR=nvim
+export GIT_EDITOR="nvim"
+export EDITOR="nvim"
 
 # Config batcat
 alias bat='batcat'
@@ -118,4 +118,4 @@ eval "$(starship init bash)"
 
 # Tmuxifier config
 export PATH="$HOME/.tmuxifier/bin:$PATH"
-# eval "$(tmuxifier init -)"
+eval "$(tmuxifier init -)"
