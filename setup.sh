@@ -58,10 +58,14 @@ sudo add-apt-repository ppa:mmstick76/alacritty
 sudo apt install alacritty
 echo "---------------------------"
 
-echo "Installing tmux"
+echo "Installing tmux..."
 sudo apt install tmux
 echo "---------------------------"
 
 echo "Installing tmuxifier..."
 git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
+echo "---------------------------"
+
+echo "Installing exa..."
+sudo apt install exa
 echo "---------------------------"

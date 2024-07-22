@@ -110,6 +110,9 @@ export EDITOR="nvim"
 # Config batcat
 alias bat='batcat'
 
+# Config exa
+alias ls='exa --icons'
+
 # Rust config
 source "$HOME/.cargo/env"
 
@@ -119,3 +122,6 @@ eval "$(starship init bash)"
 # Tmuxifier config
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
+
+# Lunar Vim config
+export PATH=/home/joao.mello/.local/bin:$PATH
