@@ -125,3 +125,11 @@ eval "$(tmuxifier init -)"
 
 # Lunar Vim config
 export PATH=/home/joao.mello/.local/bin:$PATH
+
+# Golang config
+export PATH=$PATH:/usr/local/go/bin
+
+# NVM config
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
