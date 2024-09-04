@@ -102,7 +102,6 @@ function ec2log() {
   LOGFILE="${2:-/var/log/bootstrap.log}"
   ec2ssh "$INSTANCE" "tail -f '$LOGFILE'"
 }
-. "$HOME/.cargo/env"
 
 export GIT_EDITOR="nvim"
 export EDITOR="nvim"
@@ -110,11 +109,15 @@ export EDITOR="nvim"
 # Config batcat
 alias bat='batcat'
 
-# Config exa
+# config exa
 alias ls='exa --icons'
+
+# nvim to vim
+alias vim='nvim'
 
 # Rust config
 source "$HOME/.cargo/env"
+export CARGO_TARGET_DIR="~/.cargo/bin"
 
 # Starship config
 eval "$(starship init bash)"
