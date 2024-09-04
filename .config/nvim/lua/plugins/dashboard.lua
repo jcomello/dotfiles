@@ -10,8 +10,6 @@ return {
             directories = {
                 '~/dotfiles',
                 '~/dotfiles/.config/nvim',
-                '~/development/smartfit/Smart-System',
-                '~/development/smartfit/themis',
             },
         })
     end,
