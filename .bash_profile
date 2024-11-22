@@ -41,13 +41,6 @@ export PS1="\[$NO_COLOR\]\w\[$IGRN\]\$(parse_git_branch)\[$NO_COLOR\] \$ "
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home"
 
-# only for iTerm2 on Mac
-# http://www.iterm2.com/#/section/documentation/escape_codes
-function setBackground() {
-  echo -e "\033]Ph${1}\033\\"
-}
-alias setBlackBackground='setBackground 000000'
-
 function ssh() {
   if [[ -n "$EC2_SSH_PRIVATE_KEY" ]]
   then

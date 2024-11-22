@@ -19,6 +19,8 @@ echo "---------------------------"
 echo "Installing please-install... "
 rustup toolchain install nightly-2024-09-01
 cargo +nightly-2024-09-01 install please-install
+source "$HOME/.cargo/env"
+export CARGO_TARGET_DIR="~/.cargo/bin"
 echo "---------------------------"
 
 echo "Installing Curl..."
