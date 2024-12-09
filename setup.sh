@@ -62,10 +62,22 @@ echo "Installing tmux..."
 sudo apt install tmux
 echo "---------------------------"
 
+echo "Installing tpm..."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "---------------------------"
+
 echo "Installing tmuxifier..."
 git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
 echo "---------------------------"
 
 echo "Installing exa..."
 sudo apt install exa
+echo "---------------------------"
+
+echo "Installing ripgrep..."
+sudo apt install ripgrep
+echo "---------------------------"
+
+echo "Installing fd..."
+sudo apt install fd
 echo "---------------------------"
