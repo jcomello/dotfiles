@@ -10,7 +10,14 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ts_ls", "solargraph", "rust_analyzer" }
+        ensure_installed = {
+          "lua_ls",
+          "ts_ls",
+          "solargraph",
+          "pyright",
+          "rubocop",
+          "ruff",
+        }
       })
     end
   },
@@ -30,7 +37,7 @@ return {
       lspconfig.solargraph.setup({
         capabilities = capabilities
       })
-      lspconfig.rust_analyzer.setup({
+      lspconfig.pyright.setup({
         capabilities = capabilities
       })
 

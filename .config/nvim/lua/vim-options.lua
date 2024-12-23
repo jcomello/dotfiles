@@ -1,3 +1,6 @@
+vim.g.python_host_prog = '~/.pyenv/versions/py3nvim/bin/python'
+vim.g.python3_host_prog = '~/.pyenv/versions/py3nvim/bin/python'
+
 vim.opt.number  = true
 vim.opt.relativenumber = false
 
