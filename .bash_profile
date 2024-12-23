@@ -1,16 +1,17 @@
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 export GIT_EDITOR="nvim"
 export EDITOR="nvim"
 
 # Config batcat
-alias bat='batcat'
+# alias bat='batcat'
 
 # config exa
 alias ls='exa --icons'
 
 # nvim to vim
 alias vim='nvim'
+
+# Timezones for the team
+alias team_tz='ontime-cli compare -t CET -t EST -t US/Pacific -t Europe/London -t America/Sao_Paulo'
 
 # Java config
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home"
@@ -31,6 +32,8 @@ export PATH=/home/joao.mello/.local/bin:$PATH
 # Golang config
 export PATH=$PATH:/usr/local/go/bin
 
+# RVM Config
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
