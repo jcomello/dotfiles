@@ -16,9 +16,6 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 
--- Do not crash nvim when type Ctrl+z
-vim.keymap.set({'n', 'v'}, '<C-z>', ':echo "NO"', {})
-
 -- Tmux Navigation
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
