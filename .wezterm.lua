@@ -9,5 +9,6 @@ config.font = wezterm.font_with_fallback {
 config.font_size = 15
 
 config.enable_tab_bar = false
+config.window_decorations = "NONE"
 
 return config
