@@ -10,5 +10,10 @@ config.font_size = 15
 
 config.enable_tab_bar = false
 config.window_decorations = "NONE"
-
+config.window_padding = {
+  left = 10,
+  right = 10,
+  top = 0,
+  bottom = 0,
+}
 return config
