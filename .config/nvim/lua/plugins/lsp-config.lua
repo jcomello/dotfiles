@@ -13,10 +13,8 @@ return {
         ensure_installed = {
           "lua_ls",
           "ts_ls",
-          "solargraph",
           "pyright",
           "rubocop",
-          "ruff",
         }
       })
     end
@@ -34,10 +32,15 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
-      lspconfig.solargraph.setup({
+      lspconfig.rubocop.setup({
         capabilities = capabilities
       })
       lspconfig.pyright.setup({
+        settings = {
+          python = {
+            pythonPath = vim.fn.exepath("python3"),
+          },
+        },
         capabilities = capabilities
       })
 
