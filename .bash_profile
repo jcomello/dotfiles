@@ -13,6 +13,9 @@ alias vim='nvim'
 # Timezones for the team
 alias team_tz='ontime-cli compare -t CET -t EST -t US/Pacific -t Europe/London -t America/Sao_Paulo'
 
+# OSC Alias
+alias iosc='osc -A https://api.suse.de'
+
 # Java config
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home"
 
