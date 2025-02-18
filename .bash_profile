@@ -12,6 +12,7 @@ alias vim='nvim'
 
 # nvim to vi
 alias vi='nvim'
+
 # Timezones for the team
 alias team_tz='ontime-cli compare -t CET -t EST -t US/Pacific -t Europe/London -t America/Sao_Paulo'
 
@@ -37,10 +38,9 @@ export PATH=/home/joao.mello/.local/bin:$PATH
 # Golang config
 export PATH=$PATH:/usr/local/go/bin
 
-# RVM Config
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# Ruby Config
+export GEM_HOME=$HOME/.gem/ruby/2.5.9
+export PATH=$HOME/.gem/ruby/2.5.9/bin:$PATH
 
 # NVM config
 export NVM_DIR="$HOME/.nvm"
