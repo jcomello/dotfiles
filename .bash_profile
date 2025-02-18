@@ -5,11 +5,13 @@ export EDITOR="nvim"
 # alias bat='batcat'
 
 # config exa
-alias ls='exa --icons'
+alias ls='eza --icons'
 
 # nvim to vim
 alias vim='nvim'
 
+# nvim to vi
+alias vi='nvim'
 # Timezones for the team
 alias team_tz='ontime-cli compare -t CET -t EST -t US/Pacific -t Europe/London -t America/Sao_Paulo'
 
