@@ -14,6 +14,9 @@ alias vim='nvim'
 # nvim to vi
 alias vi='nvim'
 
+# Use `$ open <directory>` to open files from terminal
+alias open='xdg-open'
+
 # Timezones for the team
 alias team_tz='ontime-cli compare -t CET -t EST -t US/Pacific -t Europe/London -t America/Sao_Paulo'
 
