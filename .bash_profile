@@ -1,5 +1,6 @@
 export GIT_EDITOR="nvim"
 export EDITOR="nvim"
+export AWS_PROFILE=joao.mello
 
 # Config batcat
 # alias bat='batcat'
