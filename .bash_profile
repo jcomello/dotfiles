@@ -29,6 +29,10 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Hom
 # Rust config
 export CARGO_TARGET_DIR="~/.cargo/bin"
 
+# Ruby Config
+export GEM_HOME=$HOME/.gem/ruby/2.5.9
+export PATH=$HOME/.gem/ruby/2.5.9/bin:$PATH
+
 # Starship config
 eval "$(starship init bash)"
 
@@ -42,10 +46,6 @@ export PATH=/home/joao.mello/.local/bin:$PATH
 # Golang config
 export PATH=$PATH:/usr/local/go/bin
 
-# Ruby Config
-export GEM_HOME=$HOME/.gem/ruby/2.5.9
-export PATH=$HOME/.gem/ruby/2.5.9/bin:$PATH
-
 # NVM config
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -56,4 +56,13 @@ export NVM_DIR="$HOME/.nvm"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv virtualenv-init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/joao.mello/google-cloud-sdk/path.bash.inc' ]; then . '/home/joao.mello/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/joao.mello/google-cloud-sdk/completion.bash.inc' ]; then . '/home/joao.mello/google-cloud-sdk/completion.bash.inc'; fi
+
+# Google credentials setup
+export GOOGLE_APPLICATION_CREDENTIALS="~/google_credentials/suse-gce-test-69f6c4325856.json"
