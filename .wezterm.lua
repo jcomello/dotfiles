@@ -8,6 +8,7 @@ config.font = wezterm.font_with_fallback {
 }
 config.font_size = 15
 
+config.color_scheme = 'Tokyo Night'
 config.enable_tab_bar = false
 config.window_decorations = "NONE"
 config.window_padding = {
