@@ -46,6 +46,10 @@ export PATH=/home/joao.mello/.local/bin:$PATH
 # Golang config
 export PATH=$PATH:/usr/local/go/bin
 
+# Set up fzf key bindings and fuzzy completion
+# eval "$(fzf --bash)"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # NVM config
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
