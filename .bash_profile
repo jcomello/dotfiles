@@ -18,7 +18,7 @@ alias vi='nvim'
 alias open='xdg-open'
 
 # Timezones for the team
-alias team_tz='ontime-cli compare -t CET -t EST -t US/Pacific -t Europe/London -t America/Sao_Paulo'
+alias team_tz='cat team_timezones | ontime-cli compare'
 
 # OSC Alias
 alias iosc='osc -A https://api.suse.de'
