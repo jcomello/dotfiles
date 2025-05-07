@@ -13,8 +13,8 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"ts_ls",
-					"pyright",
-					"rubocop",
+					"ruff",
+					-- "rubocop",
 				},
 			})
 		end,
@@ -35,17 +35,11 @@ return {
 			lspconfig.rubocop.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.pyright.setup({
-				settings = {
-					python = {
-						pythonPath = vim.fn.exepath("python3"),
-					},
-				},
+			lspconfig.ruff.setup({
 				capabilities = capabilities,
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "E", vim.diagnostic.open_float, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})

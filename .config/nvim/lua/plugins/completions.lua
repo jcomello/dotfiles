@@ -10,7 +10,15 @@ return {
       nerd_font_variant = "mono",
     },
 
-    completion = { documentation = { auto_show = false } },
+    completion = {
+      menu = {
+        border = "rounded",
+      },
+      documentation = {
+        window = { border = "rounded" },
+        auto_show = false,
+      },
+    },
 
     sources = {
       default = { "lsp", "path", "snippets", "buffer" },
