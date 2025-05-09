@@ -18,10 +18,9 @@ vim.opt.shiftwidth = 2
 
 -- Add one blank line
 vim.keymap.set('n', '<CR>', ':normal o<CR>')
--- FIXME! This mapping is not working
--- I trying to add a mapping `shift-enter`
--- but it simply doesn't work.
-vim.keymap.set('n', '<S-CR>', ':normal O<CR>')
+-- vim.keymap.set('n', '<S-CR>', ':normal O<CR>')
+-- Worked only using `vim.cmd`
+vim.cmd [[nmap <S-CR> :normal O<CR>]]
 
 -- Tmux Navigation
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
