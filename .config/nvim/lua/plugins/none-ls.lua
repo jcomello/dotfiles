@@ -14,6 +14,7 @@ return {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.rubocop,
 				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.shfmt,
 				require("none-ls.formatting.ruff"),
 
 				null_ls.builtins.diagnostics.rubocop,
