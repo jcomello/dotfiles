@@ -5,7 +5,7 @@ export AWS_PROFILE=joao.mello
 # Config batcat
 # alias bat='batcat'
 
-# config exa
+# config eza
 alias ls='eza --icons'
 
 # nvim to vim
