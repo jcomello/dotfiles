@@ -161,9 +161,13 @@ mysystemmenu = {
 }
 
 myawesomemenu = {
-  { "Restart Awesome", awesome.restart,                                              lookup_icon("view-refresh", 16) },
-  { "Edit config",     editor_cmd .. " " .. awful.util.getdir("config") .. "rc.lua", lookup_icon("package_settings", 16) },
-  { "manual",          terminal .. " -e man awesome",                                lookup_icon("help-browser", 16) },
+  { "Restart Awesome", awesome.restart,               lookup_icon("view-refresh", 16) },
+  {
+    "Edit config",
+    editor_cmd .. " " .. awful.util.getdir("config") .. "rc.lua",
+    lookup_icon("package_settings", 16),
+  },
+  { "manual",          terminal .. " -e man awesome", lookup_icon("help-browser", 16) },
 }
 
 mymainmenu = freedesktop.menu.build({
@@ -486,8 +490,8 @@ globalkeys = awful.util.table.join(
 
   -- Prompt
   awful.key({ modkey }, "r", function()
-    awful.screen.focused().mypromptbox:run()
-  end, { description = "run prompt", group = "launcher" }),
+    awful.spawn.with_shell("rofi -show run &>> /tmp/rofi.log")
+  end, { description = "rofi prompt", group = "launcher" }),
 
   awful.key({ modkey }, "x", function()
     awful.prompt.run({
@@ -499,8 +503,9 @@ globalkeys = awful.util.table.join(
   end, { description = "lua execute prompt", group = "awesome" }),
   -- Menubar
   awful.key({ modkey }, "p", function()
-    menubar.show()
-  end, { description = "show the menubar", group = "launcher" })
+    -- menubar.show()
+    awful.spawn.with_shell("rofi -show drun &>> /tmp/rofi.log")
+  end, { description = "run rofi app launcher", group = "launcher" })
 )
 
 clientkeys = awful.util.table.join(
