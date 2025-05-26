@@ -18,6 +18,7 @@ return {
 				require("none-ls.formatting.ruff"),
 
 				null_ls.builtins.diagnostics.rubocop,
+				null_ls.builtins.diagnostics.mypy,
 				require("none-ls.diagnostics.ruff"),
 			},
 		})
