@@ -1,7 +1,7 @@
-vim.g.python_host_prog = '~/.pyenv/versions/py3nvim/bin/python'
-vim.g.python3_host_prog = '~/.pyenv/versions/py3nvim/bin/python'
+vim.g.python_host_prog = "~/.pyenv/versions/py3nvim/bin/python"
+vim.g.python3_host_prog = "~/.pyenv/versions/py3nvim/bin/python"
 
-vim.opt.number  = true
+vim.opt.number = true
 vim.opt.relativenumber = false
 
 vim.opt.swapfile = false
@@ -17,15 +17,15 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 
 -- Add one blank line
-vim.keymap.set('n', 'no', ':normal o<CR>')
+vim.keymap.set("n", "no", ":normal o<CR>")
 -- Add one blank line above
-vim.keymap.set('n', 'NO', ':normal O<CR>')
+vim.keymap.set("n", "NO", ":normal O<CR>")
 
 -- Tmux Navigation
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
-vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
-vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
 -- syncronizes the system clipboard
 -- with nvim's clipboard.
@@ -42,6 +42,8 @@ vim.opt.termguicolors = true
 
 vim.g.mapleader = " "
 
-vim.diagnostic.config {
-    float = { border = "rounded" },
-}
+vim.o.winborder = 'rounded'
+
+vim.diagnostic.config({
+	float = { border = "rounded" },
+})
