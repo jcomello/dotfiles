@@ -8,6 +8,9 @@ return {
 		harpoon:setup()
 		-- REQUIRED
 
+		vim.keymap.set("n", "<leader>cl", function()
+			harpoon:list():clear()
+		end)
 		vim.keymap.set("n", "<leader>add", function()
 			harpoon:list():add()
 		end)
