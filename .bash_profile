@@ -33,8 +33,11 @@ export CARGO_TARGET_DIR="~/.cargo/bin"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-# export GEM_HOME=$HOME/.gem/ruby/2.5.9
-# export PATH=$HOME/.gem/ruby/2.5.9/bin:$PATH
+
+# Setup the system's ruby version when needed
+export SYSTEM_RUBY_VERSION=$(ruby -v | cut -d' ' -f 2 | cut -d'p' -f 1)
+export GEM_HOME=$HOME/.gem/ruby/$SYSTEM_RUBY_VERSION
+export PATH=$HOME/.gem/ruby/$SYSTEM_RUBY_VERSION/bin:$PATH
 
 # Starship config
 eval "$(starship init bash)"
