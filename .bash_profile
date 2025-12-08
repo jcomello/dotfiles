@@ -11,9 +11,6 @@ alias ls='eza --icons'
 # nvim to vim
 alias vim='nvim'
 
-# nvim to vi
-alias vi='nvim'
-
 # Use `$ open <directory>` to open files from terminal
 alias open='xdg-open'
 
@@ -34,9 +31,9 @@ export CARGO_TARGET_DIR="~/.cargo/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# Setup the system's ruby version when needed
 export SYSTEM_RUBY_VERSION=$(ruby -v | cut -d' ' -f 2 | cut -d'p' -f 1)
 export GEM_HOME=$HOME/.gem/ruby/$SYSTEM_RUBY_VERSION
+# Setup the system's ruby version when needed
 export PATH=$HOME/.gem/ruby/$SYSTEM_RUBY_VERSION/bin:$PATH
 
 # Starship config
