@@ -13,7 +13,8 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"ruff",
-					-- "rubocop",
+					"rubocop",
+					"solargraph",
 				},
 			})
 		end,

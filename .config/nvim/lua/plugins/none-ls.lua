@@ -8,18 +8,12 @@ return {
 
 		null_ls.setup({
 			sources = {
-				require("none-ls.diagnostics.flake8").with({
-					extra_args = { "--max-line-length", "120" },
-				}),
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.rubocop,
 				null_ls.builtins.formatting.prettier,
 				null_ls.builtins.formatting.shfmt,
+				-- null_ls.builtins.formatting.rubyfmt,
 				require("none-ls.formatting.ruff"),
-
-				null_ls.builtins.diagnostics.rubocop,
-				null_ls.builtins.diagnostics.mypy,
-				require("none-ls.diagnostics.ruff"),
 			},
 		})
 		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
