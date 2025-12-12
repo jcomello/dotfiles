@@ -1,10 +1,9 @@
 return {
-	"nvim-lualine/lualine.nvim",
-	config = function()
-		require("lualine").setup({
-			options = {
-				theme = "horizon",
-			},
-		})
-	end,
+  "nvim-lualine/lualine.nvim",
+  dependecies = {
+    "nvim-tree/nvim-web-devcons",
+  },
+  opts = {
+    theme = "tokyonight",
+  },
 }
