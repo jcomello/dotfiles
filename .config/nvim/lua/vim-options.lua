@@ -19,6 +19,8 @@ vim.opt.shiftwidth = 2
 vim.opt.wrap = true
 vim.opt.linebreak = true
 
+vim.g.mapleader = " "
+
 -- To check the directory the backup is beeing saved
 -- just run `:echo &backupdir
 vim.opt.backup = false
@@ -39,8 +41,11 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
 -- Open/Close completions
 vim.keymap.set("i", "{", "{}<Esc>i")
+vim.keymap.set("i", "}", "{}<Esc>i")
 vim.keymap.set("i", "(", "()<Esc>i")
+vim.keymap.set("i", ")", "()<Esc>i")
 vim.keymap.set("i", "[", "[]<Esc>i")
+vim.keymap.set("i", "]", "[]<Esc>i")
 vim.keymap.set("i", '"', '""<Esc>i')
 vim.keymap.set("i", "'", "''<Esc>i")
 
@@ -53,8 +58,11 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Surround selected text with...
 vim.keymap.set("v", "<leader>(", "c()<Esc>P")
+vim.keymap.set("v", "<leader>)", "c()<Esc>P")
 vim.keymap.set("v", "<leader>[", "c[]<Esc>P")
+vim.keymap.set("v", "<leader>]", "c[]<Esc>P")
 vim.keymap.set("v", "<leader>{", "c{}<Esc>P")
+vim.keymap.set("v", "<leader>}", "c{}<Esc>P")
 vim.keymap.set("v", "<leader>'", "c''<Esc>P")
 vim.keymap.set("v", '<leader>"', 'c""<Esc>P')
 
@@ -71,8 +79,6 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
-
-vim.g.mapleader = " "
 
 vim.o.winborder = "rounded"
 
