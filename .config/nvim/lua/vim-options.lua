@@ -19,6 +19,9 @@ vim.opt.shiftwidth = 2
 vim.opt.wrap = true
 vim.opt.linebreak = true
 
+-- Disable mouse
+vim.opt.mouse = ""
+
 vim.g.mapleader = " "
 
 -- To check the directory the backup is beeing saved
