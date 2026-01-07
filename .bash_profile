@@ -75,4 +75,4 @@ if [ -f '/home/joao.mello/google-cloud-sdk/completion.bash.inc' ]; then . '/home
 export GOOGLE_APPLICATION_CREDENTIALS="~/google_credentials/suse-gce-test-69f6c4325856.json"
 
 # Load FZF theme
-source .fzf_theme.sh
+source ~/.fzf_theme.sh
