@@ -3,7 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
-      local config = require("nvim-treesitter.configs")
+      local config = require("nvim-treesitter")
       config.setup({
         ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "ruby", "rust" },
         auto_install = true,
@@ -45,7 +45,7 @@ return {
             -- mapping query_strings to modes.
             selection_modes = {
               ["@parameter.outer"] = "v", -- charwise
-              ["@function.outer"] = "V", -- linewise
+              ["@function.outer"] = "V",  -- linewise
               ["@class.outer"] = "<c-v>", -- blockwise
             },
             -- If you set this to `true` (default is `false`) then any textobject is
@@ -65,5 +65,6 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-  },
+    branch = "main",
+  }
 }
