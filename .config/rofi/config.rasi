@@ -1,5 +1,5 @@
 configuration{
-    modi: ["drun", "window", "run"];
+    modi: ["drun", "window", "run", "ssh", "windowcd", "combi", "keys"];
     icon-theme: "Papirus-Dark";
     show-icons: true;
     terminal: "kitty";
