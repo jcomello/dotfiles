@@ -3,10 +3,19 @@
    "position": "top",
    "height": 35,
    "spacing": 0,
-
    "modules-left": ["niri/workspaces"],
    "modules-center": ["niri/window"],
-   "modules-right": ["pulseaudio", "cpu", "memory", "battery", "clock", "tray"],
+   "modules-right": [
+     "custom/vpn",
+     "network",
+     "pulseaudio",
+     "cpu",
+     "temperature",
+     "memory",
+     "battery",
+     "clock",
+     "custom/shutdown-menu"
+   ],
    "niri/workspaces": { "format": "{icon}",
      "format-icons": {
        "active": "●",
@@ -20,17 +29,35 @@
      "rewrite": {
      }
    },
-
+   "network": {
+     "interface": "wlp2s0",
+     "format": "{ifname}",
+     "format-wifi": "{essid} ({signalStrength}%)   ",
+     "format-ethernet": "{ipaddr}/{cidr} 󰊗  ",
+     "format-disconnected": "", //An empty format will hide the module.
+     "tooltip-format": "{ifname} via {gwaddr} 󰊗  ",
+     "tooltip-format-wifi": "{essid} ({signalStrength}%)   ",
+     "tooltip-format-ethernet": "{ifname}   ",
+     "tooltip-format-disconnected": "Disconnected",
+     "on-click": "~/.config/rofi/scripts/wifi-menu.sh",
+     "max-length": 50
+   },
    "clock": {
      "format": " {:%H:%M}",
      "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
    },
-
    "cpu": {
      "format": "CPU {usage}%",
      "tooltip": false
    },
-
+   "custom/vpn": {
+     "format": " VPN  | ",
+     "on-click": "/home/$USER/.config/rofi/scripts/vpn-menu.sh"
+   },
+   "custom/shutdown-menu": {
+     "format": " | POWER ⏻ | ",
+     "on-click": "/home/$USER/.config/rofi/scripts/power-menu.sh"
+   },
    "memory": { // Change this format to {total:0.1f}G, i like round numbers, soo, 32G.
      "format": "MEM {used:0.1f} GB/{total:0.1f} GB",
      "tooltip-format": "MEM {percentage}%"
@@ -40,10 +67,12 @@
      "format-muted": "MUT",
      "on-click": "pavucontrol"
    },
+   "temperature": {
+     "format": " {temperatureC}°C  "
+   },
    "battery": {
-       "bat": "BAT2",
-       "interval": 60,
-       "states": {
+     "interval": 60,
+     "states": {
        "warning": 30,
        "critical": 15
      },
@@ -52,11 +81,7 @@
        "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
        "on-charging-100": "notify-send -u normal 'Battery Full!'"
      },
-     "format": "{capacity}% {icon}",
-     "format-icons": ["", "", "", "", ""],
-     "max-length": 25
-   },
-   "tray": {
-     "spacing": 5
-     }
+     "format": " {capacity}% {icon}  ",
+     "format-icons": ["", "", "", "", ""]
+   }
  }
