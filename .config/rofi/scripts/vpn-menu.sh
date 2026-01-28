@@ -8,7 +8,7 @@ set -o pipefail
 readonly PROGNAME=$(basename "$0")
 readonly ARGS=("$@")
 
-readonly FONT="DejaVu Sans Mono 8"
+# readonly FONT="DejaVu Sans Mono 8"
 readonly POSITION=3
 readonly WIDTH=-30
 readonly XOFF=-103
@@ -19,34 +19,6 @@ declare CONNECTION_STATE=false
 declare MENU_TITLE=""
 declare PICKED_ENTRY=""
 
-usage() {
-  # cat <<-EOF
-  #   usage: $PROGNAME
-
-  #     Creates a rofi menu for VPN connections.
-
-  #          -h      show this help
-
-  # EOF
-  return 0
-}
-
-parse_args() {
-  while getopts "h" argument; do
-    case "$argument" in
-    h)
-      usage
-      exit 0
-      ;;
-    *)
-      usage
-      exit 1
-      ;;
-    esac
-  done
-  shift "$((OPTIND - 1))"
-  return 0
-}
 
 determine_connection_list() {
   local active_connection=""
@@ -84,10 +56,7 @@ determine_menu_title() {
 }
 
 generate_rofi_menu() {
-  local length="$(($(echo "$CONNECTION_LIST" | wc -l) + 2))"
-  local layout=(-location "$POSITION" -width "$WIDTH" -xoffset "$XOFF" -yoffset "$YOFF" -lines "$length")
-
-  PICKED_ENTRY=$(echo -e "$CONNECTION_LIST" | rofi -dmenu -p "$MENU_TITLE" "${layout[@]}" -font "$FONT")
+  PICKED_ENTRY=$(echo -e "$CONNECTION_LIST" | rofi -dmenu -p "$MENU_TITLE" "${layout[@]}")
 
   return 0
 }
@@ -103,10 +72,6 @@ deactivate_connection() {
 }
 
 main() {
-  if [[ "${#ARGS[@]}" -gt 0 ]]; then
-    parse_args "${ARGS[@]}"
-  fi
-
   determine_connection_list
   determine_menu_title
   generate_rofi_menu
@@ -121,5 +86,4 @@ main() {
   exit 0
 }
 
-main
-;
+main;
