@@ -56,7 +56,10 @@ determine_menu_title() {
 }
 
 generate_rofi_menu() {
+  echo -e "$CONNECTION_LIST"
+
   PICKED_ENTRY=$(echo -e "$CONNECTION_LIST" | rofi -dmenu -p "$MENU_TITLE" "${layout[@]}")
+  echo $PICKED_ENTRY
 
   return 0
 }
