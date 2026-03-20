@@ -51,11 +51,11 @@
      "tooltip": false
    },
    "custom/vpn": {
-     "format": " VPN  | ",
+     "format": " VPN   ",
      "on-click": "/home/$USER/.config/rofi/scripts/vpn-menu.sh"
    },
    "custom/shutdown-menu": {
-     "format": " | POWER ⏻ | ",
+     "format": "  POWER ⏻  ",
      "on-click": "/home/$USER/.config/rofi/scripts/power-menu.sh"
    },
    "memory": { // Change this format to {total:0.1f}G, i like round numbers, soo, 32G.
