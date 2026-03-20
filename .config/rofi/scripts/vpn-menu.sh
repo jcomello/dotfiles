@@ -23,6 +23,7 @@ declare PICKED_ENTRY=""
 determine_connection_list() {
   local active_connection=""
   local available_connections=""
+  CONNECTION_LIST="NO VPN CONNECTIONS CONFIGURED"
 
   active_connection=$(nmcli --mode tabular --terse connection show --active | grep vpn | cut -d ':' -f1) || true
   if [[ $active_connection ]]; then
@@ -37,7 +38,7 @@ determine_connection_list() {
     CONNECTION_STATE=false
     return 0
   fi
-  return 1
+  return 0
 }
 
 determine_menu_title() {
