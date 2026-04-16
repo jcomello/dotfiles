@@ -34,7 +34,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export SYSTEM_RUBY_VERSION=$(ruby -v | cut -d' ' -f 2 | cut -d'p' -f 1)
 export GEM_HOME=$HOME/.gem/ruby/$SYSTEM_RUBY_VERSION
 # Setup the system's ruby version when needed
-export PATH=$HOME/.gem/ruby/$SYSTEM_RUBY_VERSION/bin:$PATH
+export PATH="$HOME/.gem/ruby/$SYSTEM_RUBY_VERSION/bin:$PATH"
 
 # Starship config
 eval "$(starship init bash)"
@@ -44,10 +44,10 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
 
 # Lunar Vim config
-export PATH=/home/joao.mello/.local/bin:$PATH
+export PATH="/home/joao.mello/.local/bin:$PATH"
 
 # Golang config
-export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:/usr/local/go/bin"
 
 # Set up fzf key bindings and fuzzy completion
 # eval "$(fzf --bash)"
