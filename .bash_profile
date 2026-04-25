@@ -26,16 +26,6 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Hom
 # Rust config
 export CARGO_TARGET_DIR="~/.cargo/bin"
 
-# Ruby Config
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export SYSTEM_RUBY_VERSION=$(ruby -v | cut -d' ' -f 2 | cut -d'p' -f 1)
-export GEM_HOME=$HOME/.gem/ruby/$SYSTEM_RUBY_VERSION
-# Setup the system's ruby version when needed
-export PATH="$HOME/.gem/ruby/$SYSTEM_RUBY_VERSION/bin:$PATH"
-
 # Starship config
 eval "$(starship init bash)"
 
