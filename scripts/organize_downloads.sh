@@ -14,7 +14,7 @@ TARGET="${1:-.}"
 TARGET="${TARGET%/}"
 
 if [ ! -d "$TARGET" ]; then
-    echo "Erro: '$TARGET' nao e um diretorio valido." >&2
+    echo "Error: '$TARGET' not a valid directory." >&2
     exit 1
 fi
 
@@ -22,21 +22,21 @@ get_category() {
     local ext="$1"
     case "$ext" in
         jpg|jpeg|png|gif|bmp|svg|webp|ico|tiff|heic|heif|raw|cr2|nef|avif)
-            echo "Imagens" ;;
+            echo "Images" ;;
         pdf|doc|docx|xls|xlsx|ppt|pptx|odt|ods|odp|rtf|tex|pages|numbers|key|epub)
-            echo "Documentos" ;;
+            echo "Documents" ;;
         mp4|mov|avi|mkv|wmv|flv|webm|m4v|mpg|mpeg|ts)
             echo "Videos" ;;
         mp3|wav|flac|aac|ogg|wma|m4a|opus|aiff|alac)
             echo "Audio" ;;
         dmg|pkg|exe|msi|deb|rpm|appimage|snap|flatpak)
-            echo "Instaladores" ;;
+            echo "Installers" ;;
         zip|rar|7z|tar|gz|bz2|xz|tgz|zst)
-            echo "Compactados" ;;
+            echo "Compacted" ;;
         py|js|html|css|sh|json|xml|yaml|yml|md|csv|sql|rb|go|rs|java|c|cpp|h|swift|kt|lua|r)
-            echo "Codigo" ;;
+            echo "Code" ;;
         *)
-            echo "Outros" ;;
+            echo "Others" ;;
     esac
 }
 
@@ -63,7 +63,7 @@ for file in "$TARGET"/*; do
 
     # Se nao tem extensao
     if [ "$filename" = "$ext" ]; then
-        category="Outros"
+        category="Others"
     else
         category=$(get_category "$ext")
     fi
@@ -93,12 +93,12 @@ done
 echo ""
 
 if [ $MOVED -eq 0 ]; then
-    echo -e "  ${DIM}Nenhum arquivo pra organizar.${RESET}"
+    echo -e "  ${DIM}No file to organize.${RESET}"
 else
-    echo -e "  ${GREEN}✓ $MOVED arquivos organizados:${RESET}"
+    echo -e "  ${GREEN}✓ $MOVED files organized:${RESET}"
     echo ""
     sort "$COUNTS_FILE" | uniq -c | sort -rn | while read -r count cat; do
-        printf "  %-16s ${BOLD}%d${RESET} arquivos\n" "$cat:" "$count"
+        printf "  %-16s ${BOLD}%d${RESET} files\n" "$cat:" "$count"
     done
 fi
 echo ""
