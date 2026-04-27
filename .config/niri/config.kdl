@@ -35,10 +35,10 @@ input {
         // dwtp
         // drag false
         // drag-lock
-        natural-scroll
-        // accel-speed 0.2
+        // natural-scroll
+        accel-speed 0.4
         // accel-profile "flat"
-        // scroll-method "two-finger"
+        scroll-method "two-finger"
         // disabled-on-external-mouse
     }
 
@@ -371,6 +371,8 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Open app launcher: Noctalia Laucher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: Noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+    Super+Alt+P hotkey-overlay-title="Call session menu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
