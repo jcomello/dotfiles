@@ -381,7 +381,8 @@
         "iRadiusRatio": 0.5,
         "keybinds": {
             "keyDown": [
-                "Down"
+                "Down",
+                "Ctrl+J"
             ],
             "keyEnter": [
                 "Return",
@@ -391,16 +392,19 @@
                 "Esc"
             ],
             "keyLeft": [
-                "Left"
+                "Left",
+                "Ctrl+L"
             ],
             "keyRemove": [
                 "Del"
             ],
             "keyRight": [
-                "Right"
+                "Right",
+                "Ctrl+H"
             ],
             "keyUp": [
-                "Up"
+                "Up",
+                "Ctrl+K"
             ]
         },
         "language": "",
@@ -710,7 +714,7 @@
         ],
         "useOriginalImages": true,
         "useSolidColor": false,
-        "useWallhaven": true,
+        "useWallhaven": false,
         "viewMode": "single",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
