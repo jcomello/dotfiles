@@ -42,16 +42,6 @@ vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
--- Open/Close completions
-vim.keymap.set("i", "{", "{}<Esc>i")
-vim.keymap.set("i", "}", "{}<Esc>i")
-vim.keymap.set("i", "(", "()<Esc>i")
-vim.keymap.set("i", ")", "()<Esc>i")
-vim.keymap.set("i", "[", "[]<Esc>i")
-vim.keymap.set("i", "]", "[]<Esc>i")
-vim.keymap.set("i", '"', '""<Esc>i')
-vim.keymap.set("i", "'", "''<Esc>i")
-
 -- Move current line up and down
 vim.keymap.set("n", "<A-J>", ":m .+1<CR>>==")
 vim.keymap.set("n", "<A-K>", ":m .-2<CR>>==")
