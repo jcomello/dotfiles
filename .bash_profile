@@ -37,9 +37,6 @@ eval "$(starship init bash)"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
 
-# Lunar Vim config
-export PATH="/home/joao.mello/.local/bin:$PATH"
-
 # Golang config
 export PATH="$PATH:/usr/local/go/bin"
 
