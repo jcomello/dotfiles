@@ -34,7 +34,8 @@ eval "$(mise activate bash)"
 eval "$(starship init bash)"
 
 # Poetry config
-eval "$(poetry env activate)"
+# Commented it until find a better solution
+# eval "$(poetry env activate)"
 
 # Tmuxifier config
 export PATH="$HOME/.tmuxifier/bin:$PATH"
