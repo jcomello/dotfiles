@@ -24,7 +24,8 @@ alias iosc='osc -A https://api.suse.de'
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home"
 
 # Rust config
-export CARGO_TARGET_DIR="~/.cargo/bin"
+export CARGO_TARGET_DIR="$HOME/.cargo/bin"
+export PATH="$PATH:$CARGO_TARGET_DIR"
 
 # Ruby Config
 # Activate mise as version manager
