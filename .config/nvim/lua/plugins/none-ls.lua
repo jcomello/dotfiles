@@ -16,6 +16,6 @@ return {
         require("none-ls.formatting.ruff"),
       },
     })
-    vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+    vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Formatter: Format file" })
   end,
 }

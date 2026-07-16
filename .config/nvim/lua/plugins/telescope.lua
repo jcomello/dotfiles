@@ -3,17 +3,17 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
     config = function()
       local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+      vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope: Find file" })
       vim.keymap.set("n", "<leader>fc", function()
         builtin.find_files({
           cwd = vim.fn.stdpath("config"),
-        })
+        }, { desc = "Telescope: Find configuration file" })
       end, {})
-      vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+      vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope: Open live grep" })
     end,
   },
   {

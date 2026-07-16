@@ -17,6 +17,6 @@ return {
         },
       },
     })
-    vim.keymap.set("n", "<C-e>", ":Neotree toggle<CR>", {})
+    vim.keymap.set("n", "<C-e>", ":Neotree toggle<CR>", { desc = "Neotree: Toggle file tree" })
   end,
 }
