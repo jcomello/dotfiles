@@ -20,6 +20,9 @@ alias team_tz='cat ~/dotfiles/team_timezones | ontime-cli compare'
 # OSC Alias
 alias iosc='osc -A https://api.suse.de'
 
+# ekphos with vim
+alias vimek='vim ~/Documents/ekphos/'
+
 # Java config
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home"
 
