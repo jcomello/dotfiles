@@ -31,6 +31,9 @@ vim.opt.backup = false
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
+-- Toggle Line wrap
+vim.keymap.set('n', '<leader>w', ':set wrap!<CR>', { desc = 'Toggle line wrap' })
+
 -- Add one blank line
 vim.keymap.set("n", "no", ":normal o<CR>")
 -- Add one blank line above
