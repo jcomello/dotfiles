@@ -81,7 +81,7 @@ scan_networks() {
 
         local scan_output
         scan_output=$(iwlist "$iface" scan 2>/dev/null) || {
-            echo -e "  ${RED}Erro ao escanear. Tente executar com sudo.${RESET}" >&2
+            echo -e "  ${RED}Error while scanning. Try to execute with sudo.${RESET}" >&2
             exit 1
         }
 
@@ -101,8 +101,8 @@ scan_networks() {
         }
         ' >> "$PARSED_FILE"
     else
-        echo -e "  ${RED}Erro: nenhuma ferramenta de scan Wi-Fi encontrada.${RESET}" >&2
-        echo -e "  ${DIM}Instale NetworkManager (nmcli) ou wireless-tools (iwlist).${RESET}" >&2
+        echo -e "  ${RED}Error: no Wi-Fi scan tool found.${RESET}" >&2
+        echo -e "  ${DIM}Install NetworkManager (nmcli) or wireless-tools (iwlist).${RESET}" >&2
         exit 1
     fi
 }
@@ -127,7 +127,7 @@ signal_bar() {
 # -- Main --
 
 echo ""
-echo -e "  Escaneando redes Wi-Fi..."
+echo -e "  Scanning Wi-Fi networks..."
 echo ""
 
 current_ssid=$(get_current_ssid)
@@ -137,18 +137,18 @@ current_channel=$(get_current_channel)
 scan_networks
 
 if [ ! -s "$PARSED_FILE" ]; then
-    echo -e "  ${RED}Nenhuma rede encontrada.${RESET}"
-    echo -e "  ${DIM}Verifique se o Wi-Fi esta ligado.${RESET}"
+    echo -e "  ${RED}No network found.${RESET}"
+    echo -e "  ${DIM}Check if Wi-Fi is turned on.${RESET}"
     exit 1
 fi
 
-# -- Contar redes por canal --
+# -- Count networks by channel --
 
-# Canais 2.4 GHz (1-14)
-echo -e "  ${BOLD}Redes encontradas (2.4 GHz):${RESET}"
+# Channels 2.4 GHz (1-14)
+echo -e "  ${BOLD}Found networks(2.4 GHz):${RESET}"
 echo ""
-printf "  %-6s %-6s %-10s %s\n" "Canal" "Redes" "Sinal" "Nomes"
-printf "  %-6s %-6s %-10s %s\n" "─────" "─────" "────────" "──────────────────────────────"
+printf "  %-6s %-6s %-10s %s\n" "Channel" "Network" "Signal" "Names"
+printf "  %-6s %-6s %-10s %s\n" "───────" "───────" "──────" "──────────────────────────────"
 
 best_24_ch=""
 best_24_count=999
@@ -157,7 +157,7 @@ for ch in 1 2 3 4 5 6 7 8 9 10 11 12 13; do
     count=$(awk -F'|' -v c="$ch" '$1 == c' "$PARSED_FILE" | wc -l | tr -d ' ')
     names=$(awk -F'|' -v c="$ch" '$1 == c {print $2}' "$PARSED_FILE" | paste -sd', ' -)
 
-    # Rastrear melhor canal nao-sobreposto
+    # Track best channel
     case $ch in
         1|6|11)
             if [ "$count" -lt "$best_24_count" ]; then
@@ -167,7 +167,7 @@ for ch in 1 2 3 4 5 6 7 8 9 10 11 12 13; do
             ;;
     esac
 
-    # Pular canais vazios que nao sao 1, 6 ou 11
+    # Skip empty channels that are not 1, 6 or 11
     if [ "$count" -eq 0 ]; then
         case $ch in
             1|6|11) ;;
@@ -177,7 +177,7 @@ for ch in 1 2 3 4 5 6 7 8 9 10 11 12 13; do
 
     bar=$(signal_bar "$count")
 
-    # Destacar rede do usuario
+    # Highlight user's network
     if [ -n "$current_ssid" ] && echo "$names" | grep -q "$current_ssid"; then
         names=$(echo "$names" | sed "s/$current_ssid/$(printf "${GREEN}${current_ssid}${RESET}")/")
     fi
@@ -210,9 +210,10 @@ done
 
 if $has_5ghz; then
     echo -e "  ${BOLD}Redes encontradas (5 GHz):${RESET}"
+    echo -e "  ${BOLD}Network found (5 GHz):${RESET}"
     echo ""
-    printf "  %-6s %-6s %-10s %s\n" "Canal" "Redes" "Sinal" "Nomes"
-    printf "  %-6s %-6s %-10s %s\n" "─────" "─────" "────────" "──────────────────────────────"
+    printf "  %-6s %-6s %-10s %s\n" "Channel" "Network" "Signal" "Names"
+    printf "  %-6s %-6s %-10s %s\n" "───────" "───────" "──────" "──────────────────────────────"
 
     for ch in 36 40 44 48 52 56 60 64 149 153 157 161 165; do
         count=$(awk -F'|' -v c="$ch" '$1 == c' "$PARSED_FILE" | wc -l | tr -d ' ')
@@ -243,50 +244,50 @@ if $has_5ghz; then
     echo ""
 fi
 
-# -- Diagnostico --
+# -- Diagnostic --
 
 echo "  ─────────────────────────────────"
 echo -e "  ${BOLD}Diagnostico:${RESET}"
 echo ""
 
 if [ -n "$current_ssid" ]; then
-    echo -e "  Sua rede:        ${GREEN}$current_ssid${RESET}"
+    echo -e "  Your network:        ${GREEN}$current_ssid${RESET}"
 else
-    echo -e "  Sua rede:        ${DIM}(nao detectada)${RESET}"
+    echo -e "  Your network:        ${DIM}(nao detectada)${RESET}"
 fi
 
 if [ -n "$current_channel" ]; then
     current_count=$(awk -F'|' -v c="$current_channel" '$1 == c' "$PARSED_FILE" | wc -l | tr -d ' ')
     if [ "$current_count" -ge 5 ]; then
-        echo -e "  Canal atual:     ${RED}$current_channel — CONGESTIONADO ($current_count redes)${RESET}"
+        echo -e "  Current channel:     ${RED}$current_channel — FULL ($current_count networks)${RESET}"
     elif [ "$current_count" -ge 3 ]; then
-        echo -e "  Canal atual:     ${YELLOW}$current_channel — MODERADO ($current_count redes)${RESET}"
+        echo -e "  Current channel:     ${YELLOW}$current_channel — MODERATE ($current_count networks)${RESET}"
     else
-        echo -e "  Canal atual:     ${GREEN}$current_channel — BOM ($current_count redes)${RESET}"
+        echo -e "  Current channel:     ${GREEN}$current_channel — GOOD ($current_count networks)${RESET}"
     fi
 fi
 
 echo ""
-echo -e "  ${BOLD}Recomendacao:${RESET}"
+echo -e "  ${BOLD}Recommendation:${RESET}"
 
 if [ -n "$best_24_ch" ]; then
     if [ "$best_24_count" -eq 0 ]; then
-        echo -e "  Canal ideal 2.4: ${GREEN}$best_24_ch — LIVRE${RESET}"
+        echo -e "  Ideal channel 2.4: ${GREEN}$best_24_ch — FREE${RESET}"
     else
-        echo -e "  Canal ideal 2.4: ${GREEN}$best_24_ch ($best_24_count redes — menos congestionado)${RESET}"
+        echo -e "  Ideal channel 2.4: ${GREEN}$best_24_ch ($best_24_count networks — less congested)${RESET}"
     fi
 fi
 
 if [ -n "$best_5_ch" ]; then
     if [ "$best_5_count" -eq 0 ]; then
-        echo -e "  Canal ideal 5G:  ${GREEN}$best_5_ch — LIVRE${RESET}"
+        echo -e "  Ideal channel 5G: ${GREEN}$best_5_ch — FREE${RESET}"
     else
-        echo -e "  Canal ideal 5G:  ${GREEN}$best_5_ch ($best_5_count redes — menos congestionado)${RESET}"
+        echo -e "  Ideal channel 5G: ${GREEN}$best_5_ch ($best_5_count networks — less congested)${RESET}"
     fi
 fi
 
 echo "  ─────────────────────────────────"
 echo ""
-echo -e "  ${DIM}Acesse o painel do roteador (geralmente 192.168.1.1)${RESET}"
-echo -e "  ${DIM}e altere o canal nas configuracoes de Wi-Fi.${RESET}"
+echo -e "  ${DIM}Access the router's dashboard (usually 192.168.1.1)${RESET}"
+echo -e "  ${DIM}and change the channel in the Wi-Fi settings.${RESET}"
 echo ""
