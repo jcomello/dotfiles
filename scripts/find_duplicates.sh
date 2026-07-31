@@ -18,7 +18,7 @@ TARGET="${TARGET%/}"
 MIN_SIZE="${2:-1024}"
 
 if [ ! -d "$TARGET" ]; then
-    echo "Erro: '$TARGET' not a valid directory." >&2
+    echo "Error: '$TARGET' not a valid directory." >&2
     exit 1
 fi
 
