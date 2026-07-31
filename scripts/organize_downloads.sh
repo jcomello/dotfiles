@@ -45,7 +45,7 @@ COUNTS_FILE=$(mktemp)
 trap 'rm -f "$COUNTS_FILE"' EXIT
 
 echo ""
-echo -e "  Escaneando ${BOLD}$TARGET${RESET}..."
+echo -e "  Scanning ${BOLD}$TARGET${RESET}..."
 
 for file in "$TARGET"/*; do
     [ -f "$file" ] || continue
