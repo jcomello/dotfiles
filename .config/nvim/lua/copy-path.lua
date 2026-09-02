@@ -1,0 +1,5 @@
+vim.api.nvim_create_user_command('CopyPath', function(opts)
+  local path = vim.fn.expand(opts.fargs[1])
+  vim.fn.setreg('+', path)
+  print('Copied path: ' .. path)
+end, {nargs = "*", desc = "CopyPath with args"})

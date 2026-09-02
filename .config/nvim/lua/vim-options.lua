@@ -79,9 +79,13 @@ vim.opt.smartcase = true
 vim.keymap.set("n", "<leader>fc", "/\\v^[<|=>]{7}([^<|=>].*)?$<CR>", { desc = "Find next git conflict" })
 
 vim.opt.termguicolors = true
+-- Copy current file path to clipboard
+vim.keymap.set("n", "<Leader>cp", ":CopyPath %:p<CR>", { desc = "Copy current file path to clipboard" })
 
 vim.o.winborder = "rounded"
 
 vim.diagnostic.config({
   float = { border = "rounded" },
 })
+-- Copy current file relative path to clipboard
+vim.keymap.set("n", "<Leader>crp", ":CopyPath %<CR>", { desc = "Copy current file relative path to clipboard" })
