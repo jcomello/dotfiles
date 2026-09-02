@@ -7,12 +7,8 @@ return {
     },
     config = function()
       local builtin = require("telescope.builtin")
+      vim.keymap.set("n", "<leader>fm", builtin.git_status, { desc = "Telescope: Find modified" })
       vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope: Find file" })
-      vim.keymap.set("n", "<leader>fc", function()
-        builtin.find_files({
-          cwd = vim.fn.stdpath("config"),
-        }, { desc = "Telescope: Find configuration file" })
-      end, {})
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope: Open live grep" })
     end,
   },

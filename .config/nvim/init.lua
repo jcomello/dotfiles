@@ -1,5 +1,6 @@
 require("highlight-on-yank")
 require("lazy-config")
+require("refresh-automatically")
 require("vim-options")
 require("lsp-config")
 require("lazy").setup("plugins")

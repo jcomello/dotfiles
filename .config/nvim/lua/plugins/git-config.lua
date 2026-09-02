@@ -12,6 +12,8 @@ return {
         { desc = "Gitsigns: Toggle current line blame" }
       )
       vim.keymap.set("n", "<Leader>gb", ":Gitsigns blame<CR>", { desc = "Gitsigns: Blame" })
+      vim.keymap.set("n", "<Leader>ghn", ":Gitsigns next_hunk<CR>", { desc = "Gitsigns: Goes to next hunk" })
+      vim.keymap.set("n", "<Leader>ghp", ":Gitsigns prev_hunk<CR>", { desc = "Gitsigns: Goes to prev hunk" })
     end,
   },
   {
