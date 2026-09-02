@@ -19,6 +19,8 @@ vim.opt.shiftwidth = 2
 vim.opt.wrap = true
 vim.opt.linebreak = true
 
+-- Enable autoread
+vim.opt.autoread = true
 -- Disable mouse
 vim.opt.mouse = ""
 
@@ -73,6 +75,8 @@ vim.opt.inccommand = "split"
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+-- Find next git conflict
+vim.keymap.set("n", "<leader>fc", "/\\v^[<|=>]{7}([^<|=>].*)?$<CR>", { desc = "Find next git conflict" })
 
 vim.opt.termguicolors = true
 
