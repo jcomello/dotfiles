@@ -1,3 +1,4 @@
+require("copy-path")
 require("highlight-on-yank")
 require("lazy-config")
 require("refresh-automatically")
