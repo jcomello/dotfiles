@@ -21,6 +21,7 @@ vim.opt.linebreak = true
 
 -- Enable autoread
 vim.opt.autoread = true
+
 -- Disable mouse
 vim.opt.mouse = ""
 
@@ -32,6 +33,26 @@ vim.opt.backup = false
 
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
+  -- syncronizes the system clipboard
+-- with nvim's clipboard.
+vim.opt.clipboard = "unnamedplus"
+vim.opt.scrolloff = 999
+
+vim.opt.virtualedit = "block"
+
+vim.opt.inccommand = "split"
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.termguicolors = true
+
+vim.o.winborder = "rounded"
+
+vim.diagnostic.config({
+  float = { border = "rounded" },
+})
 
 -- Toggle Line wrap
 vim.keymap.set("n", "<leader>w", ":set wrap!<CR>", { desc = "Toggle line wrap" })
@@ -54,38 +75,11 @@ vim.keymap.set("n", "<A-K>", ":m .-2<CR>>==", { desc = "Move current line up" })
 -- Remove search highlight on Esc
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove search highlight on Esc" })
 
--- Surround selected text with...
-vim.keymap.set("v", "<leader>(", "c()<Esc>P", { desc = "Surround selected text with ()" })
-vim.keymap.set("v", "<leader>)", "c()<Esc>P", { desc = "Surround selected text with ()" })
-vim.keymap.set("v", "<leader>[", "c[]<Esc>P", { desc = "Surround selected text with []" })
-vim.keymap.set("v", "<leader>]", "c[]<Esc>P", { desc = "Surround selected text with []" })
-vim.keymap.set("v", "<leader>{", "c{}<Esc>P", { desc = "Surround selected text with {}" })
-vim.keymap.set("v", "<leader>}", "c{}<Esc>P", { desc = "Surround selected text with {}" })
-vim.keymap.set("v", "<leader>'", "c''<Esc>P", { desc = "Surround selected text with ''" })
-vim.keymap.set("v", '<leader>"', 'c""<Esc>P', { desc = 'Surround selected text with ""' })
-
--- syncronizes the system clipboard
--- with nvim's clipboard.
-vim.opt.clipboard = "unnamedplus"
-vim.opt.scrolloff = 999
-
-vim.opt.virtualedit = "block"
-
-vim.opt.inccommand = "split"
-
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
 -- Find next git conflict
 vim.keymap.set("n", "<leader>fc", "/\\v^[<|=>]{7}([^<|=>].*)?$<CR>", { desc = "Find next git conflict" })
 
-vim.opt.termguicolors = true
 -- Copy current file path to clipboard
 vim.keymap.set("n", "<Leader>cp", ":CopyPath %:p<CR>", { desc = "Copy current file path to clipboard" })
 
-vim.o.winborder = "rounded"
-
-vim.diagnostic.config({
-  float = { border = "rounded" },
-})
 -- Copy current file relative path to clipboard
 vim.keymap.set("n", "<Leader>crp", ":CopyPath %<CR>", { desc = "Copy current file relative path to clipboard" })
