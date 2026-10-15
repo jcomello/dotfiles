@@ -372,6 +372,7 @@
         "allowPasswordWithFprintd": false,
         "animationDisabled": false,
         "animationSpeed": 1,
+        "autoNetworkEnabled": true,
         "autoStartAuth": false,
         "avatarImage": "/home/joao.mello/.face",
         "boxRadiusRatio": 1,
